@@ -27,9 +27,29 @@ global $conn;
                 $email = $_POST['email'] ?? null;
                 $data_nascimento = $_POST['data_nascimento'] ?? null;
 
+                $erros = [];
+
                 if (empty($nome) || empty($endereco) || empty($telefone) || empty($email) || empty($data_nascimento)) {
-                    echo "<div class='alert alert-warning'>Dados obrigatórios. Volte e preencha o formulário.</div>";
+                    $erros[] = "Todos os campos devem ser preenchidos!";
+                }
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $erros[] = "O e-mail inserido não é válido!";
+                }
+                $telefone_limpo = preg_replace("/[^0-9]/", "", $telefone);
+
+                if (!preg_match("/^[0-9]{10,11}$/", $telefone_limpo)) {
+                    $erros[] = "O telefone deve conter 10 ou 11 dígitos (incluindo DDD) e ser um número válido.";
+                }
+                if (!empty($erros)) {
+                    echo "<div class='alert alert-danger'><ul>";
+
+                    foreach ($erros as $erro) {
+                        echo "<li>" . htmlspecialchars($erro) . "</li>";
+                    }
+                    echo "</ul></div>";
                 } else {
+
+                    // ... (O restante da lógica de inserção no banco)
 
                     $sql = "INSERT INTO pessoas (nome, endereco, telefone, email, data_nascimento) VALUES (?, ?, ?, ?, ?)";
                     $stmt = mysqli_prepare($conn, $sql);
@@ -37,7 +57,8 @@ global $conn;
                     mysqli_stmt_bind_param($stmt, "sssss", $nome, $endereco, $telefone, $email, $data_nascimento);
 
                     if (mysqli_stmt_execute($stmt)) {
-                        echo "<div class='alert alert-success'>Dados de <strong>$nome</strong> cadastrados com sucesso!</div>";
+                        $nome_seguro = htmlspecialchars($nome, ENT_QUOTES, 'UTF-8');
+                        echo "<div class='alert alert-success'>Dados de <strong>$nome_seguro</strong> cadastrados com sucesso!</div>";
                     } else {
                         echo "<div class='alert alert-danger'>ERRO ao cadastrar. Verifique a estrutura da tabela.</div>";
                     }
