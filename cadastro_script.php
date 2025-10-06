@@ -10,8 +10,8 @@ global $conn;
     <title>Processando Cadastro</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-<div class="container mt-5">
+<body class="text-bg-dark">
+<div class="container mt-5 text-bg-dark">
     <div class="row">
         <div class="col">
             <?php
@@ -52,7 +52,9 @@ global $conn;
             <a href="index.php" class="btn btn-primary mt-3">Voltar ao Cadastro</a>
         </div>
     </div>
-    <p>Sistema de Cadastro &copy; 2025</p>
 </div>
+<footer class="text-center text-white-50 bg-dark py-3" style="position: fixed; bottom: 0; width: 100%;">
+    <p class="mb-0">Sistema de Cadastro &copy; 2025</p>
+</footer>
 </body>
 </html>

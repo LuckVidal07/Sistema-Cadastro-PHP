@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+}
+
+.cover-container {
+    max-width: 42em;
+}
+
+.form-cadastro-fundo {
+    background-color: #1a1d20;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    text-align: left;
+    color: #f8f9fa;
+}
+
+.form-cadastro-fundo .form-label {
+    color: #adb5bd;
+}
+
+.form-cadastro-fundo .form-control {
+    background-color: #343a40;
+    color: #f8f9fa;
+    border-color: #495057;
+}

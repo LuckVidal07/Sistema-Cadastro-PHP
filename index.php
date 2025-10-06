@@ -1,43 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sistema de Cadastro</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* CSS para o layout da página */
-        html, body {
-            height: 100%;
-        }
-
-        .cover-container {
-            max-width: 42em; /* Limita a largura do container principal */
-        }
-
-        .form-cadastro-fundo {
-            /*Usando código HEX fixo (cinza escuro) */
-            background-color: #1a1d20; /* Cor que imita o fundo escuro suave do Bootstrap (Tertiary BG) */
-            padding: 2.5rem;
-            border-radius: 0.5rem;
-            text-align: left;
-
-            /* CORREÇÃO AQUI: Garante que o texto dentro seja branco */
-            color: #f8f9fa; /* Cor que imita o texto Light do Bootstrap */
-        }
-
-        /* Estiliza as labels dentro da caixa escura para não serem pretas */
-        .form-cadastro-fundo .form-label {
-            color: #adb5bd; /* Um cinza claro suave para as labels */
-        }
-
-        /* Opcional: Garante que os inputs não sejam pretos no Dark Mode */
-        .form-cadastro-fundo .form-control {
-            background-color: #343a40; /* Fundo do input mais escuro */
-            color: #f8f9fa; /* Texto do input claro */
-            border-color: #495057; /* Borda do input mais suave */
-        }
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="d-flex h-100 text-center text-bg-dark">
 
@@ -49,7 +17,6 @@
                     <span class="h4 mb-2 mb-lg-0 me-3 link-light text-decoration-none">
                         Sistema de Cadastro
                     </span>
-
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a class="nav-link px-2 link-secondary">Cadastrar</a></li>
                     <li><a class="nav-link px-2 link-light">Visualizar Dados</a></li>
@@ -101,14 +68,12 @@
                     </form>
                 </div>
             </div>
-        </div>
     </main>
 
     <footer class="mt-auto text-white-50">
         <p>Sistema de Cadastro &copy; 2025</p>
     </footer>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
